@@ -1,0 +1,41 @@
+# Claude / Anthropic supplementary rules for Surge
+# Updated: 2026-10-29
+# Place the RULE-SET reference after blocking rules and before general routing rules.
+# Policy belongs in the profile's RULE-SET reference, not in this file.
+
+# Official Desktop domains
+DOMAIN-SUFFIX,claude.app
+DOMAIN-SUFFIX,claudemcpcontent.com
+
+# Additional domains catalogued by community rule maintainers
+# Inclusion is based on the cited registries; these are not all required for chat.
+DOMAIN-SUFFIX,ant.dev
+DOMAIN-SUFFIX,anthropic.team
+DOMAIN-SUFFIX,antspace.dev
+DOMAIN-SUFFIX,chatbotclaude.com
+DOMAIN-SUFFIX,claude.dev
+DOMAIN-SUFFIX,claude.new
+DOMAIN-SUFFIX,claude.site
+DOMAIN-SUFFIX,claudeacademy.com
+DOMAIN-SUFFIX,claudemcpclient.com
+DOMAIN-SUFFIX,claudepages.dev
+DOMAIN-SUFFIX,claudestudio.com
+DOMAIN,servd-anthropic-website.b-cdn.net
+
+# Artifact libraries: exact shared-service hostnames only
+DOMAIN,cdn.tailwindcss.com
+DOMAIN,code.jquery.com
+DOMAIN,unpkg.com
+
+# Homebrew version checks
+DOMAIN,formulae.brew.sh
+
+# Optional operational telemetry listed in Claude Code documentation
+DOMAIN,http-intake.logs.us5.datadoghq.com
+DOMAIN,browser-intake-us5-datadoghq.com
+
+# Community-reported feature configuration service
+DOMAIN,cdn.growthbook.io
+
+# MCP documentation and ecosystem
+DOMAIN-SUFFIX,modelcontextprotocol.io
