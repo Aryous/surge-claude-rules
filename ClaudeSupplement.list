@@ -1,5 +1,5 @@
 # Claude / Anthropic supplementary rules for Surge
-# Updated: 2026-10-29
+# Updated: 2026-10-30
 # Place the RULE-SET reference after blocking rules and before general routing rules.
 # Policy belongs in the profile's RULE-SET reference, not in this file.
 
@@ -30,8 +30,10 @@ DOMAIN,unpkg.com
 # Homebrew version checks
 DOMAIN,formulae.brew.sh
 
-# Optional operational telemetry listed in Claude Code documentation
-DOMAIN,http-intake.logs.us5.datadoghq.com
+# Datadog routing with exclusions for established blocking rules (2026-10-30).
+# Excluded hosts fall through to the existing blocking rules.
+AND,((DOMAIN-SUFFIX,datadoghq.com),(NOT,((DOMAIN-SUFFIX,browser-http-intake.logs.datadoghq.com))),(NOT,((DOMAIN-SUFFIX,http-intake.logs.datadoghq.com))),(NOT,((DOMAIN-SUFFIX,iam-rum-intake.datadoghq.com))),(NOT,((DOMAIN-SUFFIX,rum-http-intake.logs.datadoghq.com))),(NOT,((DOMAIN-SUFFIX,tlzqr.datadoghq.com))),(NOT,((DOMAIN,logs.datadoghq.com))))
+# Separate registrable domain, not a subdomain of datadoghq.com
 DOMAIN,browser-intake-us5-datadoghq.com
 
 # Community-reported feature configuration service
